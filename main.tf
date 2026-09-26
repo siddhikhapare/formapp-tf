@@ -65,7 +65,7 @@ module "bastion" {
 # ALB Module
 # ============================================================
 module "alb" {
-  source = "./alb"
+  source = "./LB"
 
   project_name           = var.project_name
   environment            = var.environment
