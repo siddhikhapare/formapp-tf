@@ -24,10 +24,9 @@
 ### Module dependency graph
 vpc
   → security_group
-      → rds        (parallel with...)
-      → alb + bastion   (parallel, both only need security_group + vpc)
+      → rds        (parallel with ...)
+      → LB + bastion   (parallel, both only need security_group + vpc)
           → ami    (needs alb.internal_alb_dns_name)
               → web_asg   (needs ami + alb)
               → app_asg   (needs ami + alb + rds)
                   → cdn   (needs alb — actually just needs alb, not app_asg)
-
