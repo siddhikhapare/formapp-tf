@@ -2,7 +2,7 @@
 ## Folder Structure
 
 ```
-.
+
 ├── main.tf                 # Root module: wires all child modules together
 ├── variables.tf            # Root input variables
 ├── outputs.tf              # Root outputs
