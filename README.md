@@ -22,6 +22,7 @@
 ```
 
 ### Module dependency graph
+```
 vpc
   → security_group
       → rds        (parallel with ...)
@@ -30,3 +31,7 @@ vpc
               → web_asg   (needs ami + alb)
               → app_asg   (needs ami + alb + rds)
                   → cdn   (needs alb — actually just needs alb, not app_asg)
+```
+
+
+
