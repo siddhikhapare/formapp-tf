@@ -132,3 +132,31 @@ terraform graph | dot -Tpng > graph.png
 ```bash
 terraform destroy
 ```
+
+Building a new environment step by step. For example, create module.vpc first, because other parts need things that don't exist yet.
+Fixing a problem in production. For example, change one security group or retry a failed apply, when the full plan has other changes you don't want to apply right now.
+
+```
+1.terraform plan  -target=module.vpc -out=vpc.tfplan
+2. terraform apply vpc.tfplan
+```
+Several modules at once:
+```
+terraform apply -target=module.vpc -target=module.security_group
+```
+
+single resource inside a module:
+```
+terraform apply -target=module.rds.aws_db_instance.main
+```
+
+Destroy one module:
+```
+terraform destroy -target=module.cdn
+```
+
+
+
+
+
+
