@@ -40,7 +40,7 @@ By default Terraform stores state in `terraform.tfstate` on your laptop. That br
 
 - **No sharing** – teammates or CI can't see what already exists, so they try to recreate it.
 - **No locking** – two `terraform apply` runs at once can corrupt state.
-- **No history / recovery** – deleting the file orphans real AWS resources.
+- **No history / recovery** – if the state file is deleted, Terraform loses track of the existing AWS resources, leaving them unmanaged. With S3 versioning, a previous state version can be restored.
 
 ### State locking
 
