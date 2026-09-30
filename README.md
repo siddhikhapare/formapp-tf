@@ -70,17 +70,7 @@ terraform {
 
 ## Commands 
 
-## Terraform Workflow
-
-### 1. Configure variables
-
-Copy the example variables file and edit the values:
-
-```bash
-cp terraform.tfvars.example terraform.tfvars
-```
-
-### 2. Initialize Terraform
+### 1. Initialize Terraform
 
 Initialize Terraform and connect to the S3 backend:
 
@@ -88,7 +78,7 @@ Initialize Terraform and connect to the S3 backend:
 terraform init
 ```
 
-### 3. Check formatting and validity
+### 2. Check formatting and validity
 
 Format the Terraform configuration and validate it:
 
@@ -97,7 +87,7 @@ terraform fmt -recursive
 terraform validate
 ```
 
-### 4. Review the plan
+### 3. Review the plan
 
 Create and review the Terraform execution plan:
 
@@ -105,7 +95,7 @@ Create and review the Terraform execution plan:
 terraform plan -out=tfplan
 ```
 
-### 5. Apply the configuration
+### 4. Apply the configuration
 
 Apply the previously generated plan:
 
@@ -113,7 +103,7 @@ Apply the previously generated plan:
 terraform apply tfplan
 ```
 
-### 6. Inspect Terraform state and outputs
+### 5. Inspect Terraform state and outputs
 
 List the resources currently tracked in the Terraform state:
 
@@ -127,7 +117,7 @@ Display the Terraform outputs:
 terraform output
 ```
 
-### 7. Visualize the dependency graph
+### 6. Visualize the dependency graph
 
 Generate a PNG image of the Terraform resource dependency graph:
 
@@ -135,7 +125,7 @@ Generate a PNG image of the Terraform resource dependency graph:
 terraform graph | dot -Tpng > graph.png
 ```
 
-### 8. Tear down the infrastructure
+### 7. Tear down the infrastructure
 
 > **Warning:** This destroys the infrastructure managed by Terraform. RDS deletion protection may prevent the RDS instance from being deleted. Check snapshot of it.
 
